@@ -1,0 +1,21 @@
+body {
+    background-color: saddlebrown;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+    padding: 0 4px;
+}
+
+a {
+    display: inline-block;
+    background-color: orange;
+    color: black;
+    text-decoration: none;
+    padding: 4px;
+    border: 1px solid black;
+}

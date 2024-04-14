@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete member</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+    <h1>Här kan du ta bort medlemmar</h1>
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Förnamn</td>
+            <td>Efternamn</td>
+            <td>Address-Id</td>
+            <td>Adress</td>
+            <td>Postnummer</td>
+            <td>Ort</td>
+            <td>Mejl</td>
+            <td>Telefon</td>
+            <td>Födelsedatum</td>
+        </tr>
+        <tr th:each="member: ${members}">
+            <td th:text="${member.getId()}">id</td>
+            <td th:text="${member.getFirstName()}">firstName</td>
+            <td th:text="${member.getLastName()}">lastName</td>
+            <td th:text="${member.getAddress().getId()}">Address-Id</td>
+            <td th:text="${member.getAddress().getStreet()}">Address</td>
+            <td th:text="${member.getAddress().getPostalCode()}">Postnummer</td>
+            <td th:text="${member.getAddress().getCity()}">Ort</td>
+            <td th:text="${member.getEmail()}">email</td>
+            <td th:text="${member.getPhone()}">phone</td>
+            <td th:text="${member.getDateOfBirth()}">dateOfBirth</td>
+            <td><a th:href="@{/admin/deletemember/{memberId}(memberId = ${member.getId()})}">Delete</a></td>
+        </tr>
+    </table>
+</body>
+</html>
